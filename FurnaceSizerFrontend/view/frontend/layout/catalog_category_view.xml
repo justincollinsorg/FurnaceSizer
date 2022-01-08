@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Ecommerce121_FurnaceSizer::css/fs_custom_bootstrap.css"/>
+        <css src="Ecommerce121_FurnaceSizer::css/fs_style.css"/>
+        <script src="Ecommerce121_FurnaceSizer::js/zipLookup.js"/>
+    </head>
+    <body>
+        <referenceContainer name="columns.top">
+            <block class="Magento\Catalog\Block\Category\View" name="sqftcalc" template="Ecommerce121_FurnaceSizer::view/systemSelector.phtml" before="-">
+                <arguments>
+                    <argument name="fsCatLog" xsi:type="object">Ecommerce121\FurnaceSizer\ViewModel\CategoryLogicFs</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,117 @@
+ <?php
+/**
+ * Get the this products category to see if program should be visible.
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+$categoryLogicFs = $block->getData('fsCatLog');
+/**
+ * Show Furnace Sizer Block
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+function showFsizer($fsizerHtml){
+    if($fsizerHtml != 'HtmlDisplayNone'){
+        echo  '<div class="show_form_fsizer">';
+        echo  html_entity_decode($fsizerHtml);
+        echo  '</div>';
+    }
+}
+
+switch ($categoryLogicFs->isShowFurnaceSizer()){  
+    case null:
+    case "":
+        if($categoryLogicFs->isInheritedToShow() == false){
+        } else {
+            $_thisCategorySelectedFsizerId = $categoryLogicFs->getSelectFsizerId();
+            if($_thisCategorySelectedFsizerId == false){
+                $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+            } else {
+                $fsizerBlockId = $categoryLogicFs->getSelectFsizerId();
+            }
+            if($categoryLogicFs->fsizer->getById($fsizerBlockId)->getIsActive() == false){
+                if($categoryLogicFs->isForceShowFsizer()){
+                    $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+                    if($fsizerBlockId < 1){
+                        $fsizerBlockId = 'displayNone';
+                    }
+                    $fsizerHtml =  $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+                    showFsizer($fsizerHtml);
+                } else {
+                    //echo "case null: inherited fsizer disabled";
+                }
+            } else {
+                $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+                if($fsizerBlockId < 1){
+                    $fsizerBlockId = 'displayNone';
+                }
+                $fsizerHtml =  $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+                showFsizer($fsizerHtml);
+            }
+        }
+        break;
+    case false:
+    case "0":
+    case 0;
+        $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+        if($fsizerBlockId == 0){
+            return 0;
+        }
+        if($categoryLogicFs->fsizer->getById($fsizerBlockId)->getIsActive() == false){
+            if($categoryLogicFs->isForceShowFsizer()){
+                $fsizerHtml = $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+                showFsizer($fsizerHtml);
+            } else {
+                $fsizerBlockId = 'displayNone';
+            }
+        } else {
+            if ($fsizerBlockId < 1) {
+                    $fsizerBlockId = 'displayNone';
+            } else {
+                $fsizerHtml = $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+                showFsizer($fsizerHtml);
+            }
+        }
+        break;
+    case true:
+    case "1":
+        $_thisCategorySelectedFsizerId = $categoryLogicFs->getSelectFsizerId();
+        if($_thisCategorySelectedFsizerId == false){
+            $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+            if($fsizerBlockId < 1){
+                $fsizerBlockId = 'displayNone';
+            }
+            $fsizerHtml = $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+            showFsizer($fsizerHtml);
+        } else
+        if($categoryLogicFs->fsizer->getById($_thisCategorySelectedFsizerId)->getIsActive() == false){
+            if($categoryLogicFs->isForceShowFsizer()){
+                $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+                if($fsizerBlockId < 1){
+                    $fsizerBlockId = 'displayNone';
+                }
+                $fsizerHtml = $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+                showFsizer($fsizerHtml);
+            } else {
+                // echo "case 1: fsizer disabled";
+            }
+        } else {
+            $fsizerBlockId = $categoryLogicFs->determineNextFsizerId();
+            if($fsizerBlockId < 1){
+                $fsizerBlockId = 'displayNone';
+            }
+            $fsizerHtml = $categoryLogicFs->getFsizerHtmlById($fsizerBlockId);
+            showFsizer($fsizerHtml);
+        }
+        break;
+} 
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "<?php  echo $this->getViewFileUrl('Ecommerce121_FurnaceSizer::/js/ez-local-storage.js'); ?>" : {},
+            "<?php  echo $this->getViewFileUrl('Ecommerce121_FurnaceSizer::/js/furnaceSizerConfiguration.js'); ?>" : {}
+        }
+    }
+</script>

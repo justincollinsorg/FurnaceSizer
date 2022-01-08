@@ -1,0 +1,212 @@
+/* style.css */
+.j_ {
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    color:white;
+}
+
+.j_custom-checkbox input[type="checkbox"].j_ {
+    display: none;
+}
+
+.j_custom-checkbox {
+    margin-top: 0.5em;
+}
+.j_custom-checkbox input[type="radio"].j_ {
+    display: none;
+}
+
+main.j_ {
+    background: #a1a1a1;
+    border-radius: 0.5em;
+    box-shadow: inset -1px 2px 4px 4px #888888;
+}
+
+#advancedBTN {
+    box-shadow: none;
+    background-color: #bebebe;
+}
+#advancedBTN:hover {
+    box-shadow: none;
+    background-color: #b4b0b0;
+}
+#advancedBTN:focus {
+    box-shadow: none;
+    background-color: #b4b0b0;
+}
+#advancedBTN:active {
+    box-shadow: none;
+    background-color: #b4b0b0;
+}
+
+.j_form-control {
+    color: #5d554b;
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0.15em 0.4em;
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    background-color: #cecece5e;
+}
+.j_form-control:focus {
+    color: #5d554b;
+    background-color: #cecece5e;
+    box-shadow: none;
+    border: 1px solid #f7941d;
+}
+.j_form-control:active {
+    color: #5d554b;
+    background-color: #cecece5e;
+}
+
+.j_form-select {
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.15em 0.4em;
+    color: #5d554b;
+    background-color: #bebebe;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+}
+.j_form-select:focus {
+    color: #5d554b;
+    background-color: #bebebe;
+    box-shadow: none;
+    border: 1px solid #f7941d;
+}
+
+.j_btn-light {
+    border: 1px solid #ced4da;
+    color: #5d554b;
+    background-color: #bebebe;
+    box-shadow: none;
+}
+
+.j_btn-light:hover {
+    border: 1px solid #dfdddd;
+    background-color: #b0b0b0;
+}
+.j_btn-light:focus {
+    background-color: #b0b0b0;
+}
+.j_btn-light:active {
+    background-color: #b0b0b0;
+}
+
+.j_ .j_form-check-label {
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-weight: 400;
+}
+
+.j_orangeText {
+    color: #f7941d;
+    margin: 0 0 0.7em;
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+}
+.j_h5-white {
+    color: #ffffff;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.4;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+}
+.j_quickSizerLabel {
+    font-weight: 400;
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+}
+.j_row {
+    margin-bottom: 0.4em;
+    padding-bottom: 0.2em;
+}
+.j_row2 {
+    margin-bottom: 0.5em;
+    border-top: 1px solid white;
+}
+
+.j_form-label {
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    color: #ffffff;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.j_custom-control-label {
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.j_span-custom-control-label {
+    font-family: Raleway, "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-weight: 500;
+}
+
+#submitBtnLabel{
+    color: #812626;
+    font-weight: 400;
+}
+#advancedMenu {
+    float: right;
+}
+
+@media (min-width: 1200px) {
+    select#j_System {
+        width: 70% !important;
+        font-size: 13px;
+    }
+    input#zipCode {
+        width: 70% !important;
+        font-size: 13px;
+    }
+    input#squareFeet {
+        width: 70% !important;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    .j_bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 975.98px) {
+    #mainForm {
+        margin-top: 200px;
+    }
+
+
+    .j_img-thumbnail {
+        border-radius: 30px;
+    }
+
+    label.j_ {
+        color: white;
+    }
+}
+
+@media (max-width: 500px) {
+    .j_row {
+        padding-bottom: .6em;
+    }
+}
+
+
+#j_quickSizer {
+    margin-bottom:10px;
+}
+
+select#j_System {
+    background-color: #fff;
+}
