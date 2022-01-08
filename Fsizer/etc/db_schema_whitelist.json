@@ -1,0 +1,19 @@
+{
+    "fsizer": {
+        "column": {
+            "fsizer_id": true,
+            "title": true,
+            "content": true,
+            "creation_time": true,
+            "update_time": true,
+            "is_active": true,
+            "description": true
+        },
+        "index": {
+            "FSIZER_CONTENT": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

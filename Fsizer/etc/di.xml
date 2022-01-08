@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+    <preference for="Ecommerce121\Fsizer\Api\Data\FsizerInterface" type="Ecommerce121\Fsizer\Model\Fsizer" />
+
+    <preference for="Ecommerce121\Fsizer\Api\Data\FsizerSearchResultsInterface"  type="Magento\Framework\Api\SearchResults" />
+
+    <preference for="Ecommerce121\Fsizer\Api\FsizerRepositoryInterface" type="Ecommerce121\Fsizer\Model\FsizerRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="fsizer_page_listing_data_source" xsi:type="string">Ecommerce121\Fsizer\Model\ResourceModel\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Ecommerce121\Fsizer\Model\ResourceModel\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">fsizer</argument>
+            <argument name="eventPrefix" xsi:type="string">ecommerce121_fsizer_post</argument>
+            <argument name="eventObject" xsi:type="string">page_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Ecommerce121\Fsizer\Model\ResourceModel\Fsizer</argument>
+        </arguments>
+    </type>
+</config>

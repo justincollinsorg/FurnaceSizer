@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="fsizer" resource="default" engine="innodb" comment="CMS Fsizer Table">
+        <column xsi:type="smallint" name="fsizer_id" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Fsizer Title" disabled="true"/>
+        <column xsi:type="mediumtext" name="content" nullable="true" comment="Fsizer Content"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Furnace Sizer Description" disabled="false"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Block Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Block Modification Time"/>
+        <column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="1" comment="Is Fsizer Active"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="fsizer_id"/>
+        </constraint>
+        <index referenceId="FSIZER_CONTENT" indexType="fulltext">
+            <column name="content"/>
+        </index>
+    </table>
+</schema>

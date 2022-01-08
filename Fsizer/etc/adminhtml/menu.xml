@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ecommerce121_Fsizer::test_main" title="Furnace Sizer" translate="title" module="Ecommerce121_Fsizer" sortOrder="50" resource="Ecommerce121_Fsizer::test_main"/>
+        <add id="Ecommerce121_Fsizer::test_element" title="Element" translate="title" module="Ecommerce121_Fsizer" sortOrder="0" parent="Ecommerce121_Fsizer::test_main" resource="Ecommerce121_Fsizer::test_element"/>
+        <add id="Ecommerce121_Fsizer::test_page" title="Block Manager" translate="title" module="Ecommerce121_Fsizer" sortOrder="0" parent="Ecommerce121_Fsizer::test_element" action="test/index/index" resource="Ecommerce121_Fsizer::test_page"/>
+        <add id="Ecommerce121_Fsizer::user_docs" title="Help" translate="title" module="Ecommerce121_Fsizer" sortOrder="0" parent="Ecommerce121_Fsizer::test_element" action="test/index/userDocs" resource="Ecommerce121_Fsizer::user_docs"/>
+     </menu>
+</config>
